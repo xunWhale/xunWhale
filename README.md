@@ -90,6 +90,8 @@ Modern agent engineering is not about praying to bigger models — it is about e
 
 Not demos — things you can install and run today.
 
+**[gif2grid-mcp](https://github.com/xunWhale/gif2grid-mcp)** — an MCP server wrapping the same idea, so an agent can call it directly instead of shelling out.
+
 **[gif2grid](https://github.com/xunWhale/gif2grid)** — `pip install "gif2grid @ git+https://github.com/xunWhale/gif2grid"`
 
 Multimodal models lose motion: most GIF middleware hands the model one still frame, so a clip of someone kicking a bottle reads as "a person running". `gif2grid` samples the timeline evenly and renders the frames, frame numbers, and millisecond offsets into one timestamped contact sheet — one image, one request, motion intact. GIF / WebP / APNG / MP4, Python API and CLI, tested on Python 3.9–3.13.
