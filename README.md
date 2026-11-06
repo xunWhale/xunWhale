@@ -90,6 +90,10 @@ Modern agent engineering is not about praying to bigger models — it is about e
 
 Not demos — things you can install and run today.
 
+**[mcp2lint](https://github.com/xunWhale/mcp2lint)** — `pip install "mcp2lint @ git+https://github.com/xunWhale/mcp2lint"`
+
+MCP SDK v2 renamed `mcp.server.fastmcp` and moved every protocol field to snake_case, which broke third-party servers everywhere: 188 open issues carried the same `ModuleNotFoundError`, 40 of them filed in a single week. One traceback names one line; four more fixes wait behind it. `mcp2lint` walks the AST with zero dependencies and names every v1-only construct with its v2 replacement, so a dependency bump fails in CI instead of at import time for a user. Verified against three repositories that each reproduce the crash.
+
 **[gif2grid-mcp](https://github.com/xunWhale/gif2grid-mcp)** — an MCP server wrapping the same idea, so an agent can call it directly instead of shelling out.
 
 **[gif2grid](https://github.com/xunWhale/gif2grid)** — `pip install "gif2grid @ git+https://github.com/xunWhale/gif2grid"`
