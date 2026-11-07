@@ -90,6 +90,10 @@ Modern agent engineering is not about praying to bigger models — it is about e
 
 Not demos — things you can install and run today.
 
+**[mcp-doctor](https://github.com/xunWhale/mcp-doctor)** — `pip install "mcp-doctor @ git+https://github.com/xunWhale/mcp-doctor"`
+
+Zero-dependency diagnostic CLI for Model Context Protocol (MCP) servers. Diagnoses stdio processes and legacy SSE endpoints across 4 stages: transport connectivity, JSON-RPC 2.0 handshake & protocol version negotiation, ping latency, and tools schema validation. Output formatted as clean diagnostic reports or machine-readable JSON. Tested with 34 test cases, 0 external runtime dependencies.
+
 **[mcp2lint](https://github.com/xunWhale/mcp2lint)** — `pip install "mcp2lint @ git+https://github.com/xunWhale/mcp2lint"`
 
 MCP SDK v2 renamed `mcp.server.fastmcp` and moved every protocol field to snake_case, which broke third-party servers everywhere: 188 open issues carried the same `ModuleNotFoundError`, 40 of them filed in a single week. One traceback names one line; four more fixes wait behind it. `mcp2lint` walks the AST with zero dependencies and names every v1-only construct with its v2 replacement, so a dependency bump fails in CI instead of at import time for a user. Verified against three repositories that each reproduce the crash.
