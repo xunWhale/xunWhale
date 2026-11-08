@@ -90,6 +90,10 @@ Modern agent engineering is not about praying to bigger models — it is about e
 
 Not demos — things you can install and run today.
 
+**[AutoCetacean](https://github.com/xunWhale/autocetacean)** — `pip install "autocetacean @ git+https://github.com/xunWhale/autocetacean"`
+
+The deterministic runtime, state-machine execution graph, and rolling checkpoint replay engine for autonomous AI agents. Enforces the Five-Layer Deterministic Stack ([RFC-001](https://github.com/xunWhale/autocetacean/blob/main/docs/RFC-001-FIVE-LAYER-RUNTIME.md)): Prompt hypothesis generation, Context schema/budget validation, Harness security sandbox, Loop trajectory audit/retry, and Graph resilient state-machine routing. 52 unit tests, zero third-party runtime dependencies.
+
 **[mcp-doctor](https://github.com/xunWhale/mcp-doctor)** — `pip install "mcp-doctor @ git+https://github.com/xunWhale/mcp-doctor"`
 
 Zero-dependency diagnostic CLI for Model Context Protocol (MCP) servers. Diagnoses stdio processes and legacy SSE endpoints across 4 stages: transport connectivity, JSON-RPC 2.0 handshake & protocol version negotiation, ping latency, and tools schema validation. Output formatted as clean diagnostic reports or machine-readable JSON. Tested with 34 test cases, 0 external runtime dependencies.
