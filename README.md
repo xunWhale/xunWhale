@@ -92,7 +92,13 @@ Not demos — things you can install and run today.
 
 **[AutoCetacean](https://github.com/xunWhale/autocetacean)** — `pip install "autocetacean @ git+https://github.com/xunWhale/autocetacean"`
 
-The deterministic runtime, state-machine execution graph, and rolling checkpoint replay engine for autonomous AI agents. Enforces the Five-Layer Deterministic Stack ([RFC-001](https://github.com/xunWhale/autocetacean/blob/main/docs/RFC-001-FIVE-LAYER-RUNTIME.md)): Prompt hypothesis generation, Context schema/budget validation, Harness security sandbox, Loop trajectory audit/retry, and Graph resilient state-machine routing. 52 unit tests, zero third-party runtime dependencies.
+Wrap any coding agent in a transactional workspace:
+
+```bash
+autocetacean guard --workspace . --cmd "claude -p 'fix the failing test'" --gate "pytest -q"
+```
+
+If the gate fails, the guard restores every file the agent touched — including the untracked files and deleted directories that `git checkout` silently loses ([reproducible side-by-side example](https://github.com/xunWhale/autocetacean/blob/main/examples/git-is-not-enough.sh), 183 ms for a 113 MB repo). 95 tests, zero third-party runtime dependencies.
 
 **[mcp-doctor](https://github.com/xunWhale/mcp-doctor)** — `pip install "mcp-doctor @ git+https://github.com/xunWhale/mcp-doctor"`
 
@@ -107,6 +113,10 @@ MCP SDK v2 renamed `mcp.server.fastmcp` and moved every protocol field to snake_
 **[gif2grid](https://github.com/xunWhale/gif2grid)** — `pip install "gif2grid @ git+https://github.com/xunWhale/gif2grid"`
 
 Multimodal models lose motion: most GIF middleware hands the model one still frame, so a clip of someone kicking a bottle reads as "a person running". `gif2grid` samples the timeline evenly and renders the frames, frame numbers, and millisecond offsets into one timestamped contact sheet — one image, one request, motion intact. GIF / WebP / APNG / MP4, Python API and CLI, tested on Python 3.9–3.13.
+
+**[network-comic](https://xunwhale.github.io/network-comic/)** — 零基础数通漫画图解（中文）
+
+五页交互式图解：IP/MAC 分工、路由表与下一跳、子网掩码、静态路由、多区域 OSPF（ABR 两侧宣告与 DR/BDR 选举）。每页都能切视角看数据包到底怎么走，源自真实 eNSP 拓扑里的提问。五页三档视口 0 重叠 0 溢出，线上全部 HTTP/2 200。
 
 ---
 
